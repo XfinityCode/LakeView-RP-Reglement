@@ -2,18 +2,25 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Règlement du Serveur Discord et Roleplay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règlement LakView</title>
     <style>
-        /* Importation de polices personnalisées depuis Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
-        /* Styles de base */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000000; /* Fond noir */
-            color: #ffffff; /* Texte blanc */
+            background: linear-gradient(-45deg, #1a2a6c, #2c3e50, #2a4858);
+            background-size: 400% 400%;
+            animation: gradient 20s ease infinite;
+            color: #ffffff;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
@@ -21,33 +28,59 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #1a1a1a; /* Fond légèrement plus clair que le body */
-            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); /* Ombre rouge subtile */
+            background-color: rgba(42, 72, 88, 0.2);
+            backdrop-filter: blur(10px);
             border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(26, 42, 108, 0.2);
         }
 
-        header, footer {
+        header {
             text-align: center;
             margin-bottom: 30px;
+            animation: fadeDown 1.5s ease-out;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5em;
-            color: #ff4d4d; /* Rouge vif */
+            color: #ffffff;
             margin-bottom: 10px;
             letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         section {
             margin-bottom: 40px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         section h2 {
             font-family: 'Playfair Display', serif;
             font-size: 1.8em;
-            color: #ff3333; /* Rouge */
-            border-bottom: 3px solid #ff4d4d; /* Bordure rouge */
+            color: #a8c6fa;
+            border-bottom: 3px solid #2a4858;
             padding-bottom: 8px;
             margin-bottom: 20px;
             display: inline-block;
@@ -59,81 +92,61 @@
         }
 
         li {
-            background: #262626; /* Fond gris très foncé */
+            background: rgba(255, 255, 255, 0.05);
             margin: 10px 0;
             padding: 15px 20px;
-            border-left: 5px solid #ff4d4d; /* Bordure rouge */
+            border-left: 5px solid #2a4858;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         li:hover {
-            background-color: #333333; /* Fond légèrement plus clair au survol */
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
         }
 
         li strong {
-            color: #ff6666; /* Rouge clair */
+            color: #a8c6fa;
         }
 
         .sanctions {
             font-weight: bold;
-            color: #ff1a1a; /* Rouge intense */
+            color: #a8c6fa;
         }
 
         footer {
+            text-align: center;
             padding: 20px;
-            background-color: #000000; /* Fond noir du footer */
-            color: #ffffff; /* Texte blanc */
+            background-color: rgba(26, 42, 108, 0.2);
             border-radius: 10px;
+            margin-top: 30px;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
-        .social-links {
-            margin-top: 10px;
-        }
-
-        .social-links a {
-            margin: 0 10px;
-            color: #ffffff; /* Couleur des liens */
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #ff4d4d; /* Rouge au survol */
-        }
-
-        /* Bouton de téléchargement PDF */
         .download-btn {
             display: inline-block;
             padding: 12px 25px;
             margin-bottom: 30px;
-            background-color: #ff4d4d; /* Rouge */
-            color: #000000; /* Texte noir */
+            background-color: #2a4858;
+            color: #ffffff;
             border: none;
             border-radius: 25px;
             cursor: pointer;
             font-size: 1em;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(255, 0, 0, 0.3); /* Ombre rouge subtile */
+            box-shadow: 0 4px 6px rgba(26, 42, 108, 0.3);
             text-decoration: none;
         }
 
         .download-btn:hover {
-            background-color: #e60000; /* Rouge foncé */
+            background-color: #1a2a6c;
             transform: translateY(-2px);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 width: 95%;
                 padding: 20px;
+                margin: 20px auto;
             }
 
             header h1 {
@@ -147,31 +160,25 @@
             li {
                 padding: 12px 15px;
             }
-
-            .download-btn {
-                width: 100%;
-                text-align: center;
-            }
         }
 
-        /* Styles pour l'impression */
         @media print {
             body {
-                background-color: #ffffff;
-                color: #000000;
+                background: white;
+                color: black;
             }
             .container {
                 box-shadow: none;
-                border-radius: 0;
                 width: 100%;
                 margin: 0;
                 padding: 10px;
-                background-color: #ffffff;
             }
-            footer {
-                page-break-after: always;
-                background-color: #ffffff;
-                color: #000000;
+            li {
+                border-left-color: #2a4858;
+                background: white;
+            }
+            li strong, .sanctions {
+                color: #2a4858;
             }
             .download-btn {
                 display: none;
@@ -180,17 +187,11 @@
     </style>
 </head>
 <body>
-
     <div class="container">
-
         <header>
             <h1>Règlement du Serveur Discord et Roleplay</h1>
         </header>
 
-        <!-- Bouton de téléchargement PDF (optionnel, si vous souhaitez l'inclure) -->
-        <!-- <a href="votre_fichier.pdf" class="download-btn" download>Télécharger le PDF</a> -->
-
-        <!-- Règlement du Serveur Discord -->
         <section>
             <h2>Règlement du Serveur Discord</h2>
             <ul>
@@ -222,7 +223,6 @@
             </ul>
         </section>
 
-        <!-- Règlement Roleplay -->
         <section>
             <h2>Règlement du Roleplay</h2>
             <ul>
@@ -256,11 +256,10 @@
                 <li><strong>Article 28 :</strong> Les scènes impliquant des actions illégales (braquages, cambriolages, etc.) doivent être organisées de manière réaliste et avec des moyens adaptés. Pas de comportements irréalistes (ex : braquer une banque seul sans plan).</li>
                 <li><strong>Article 29 :</strong> La cohérence dans l'économie du jeu est essentielle. Le transfert d'argent entre personnages de manière abusive ou sans justification roleplay sera sanctionné.</li>
                 <li><strong>Article 30 :</strong> Tout comportement contraire à ces règles entraînera des sanctions allant de l'avertissement à l'expulsion du serveur.</li>
-                <li><strong>Article 31 :</strong> Tout comportement irrespectueux envers les joueuses ou les personnages féminins, en RP ou hors RP, est strictement interdit. Cela inclut les propos sexistes ou discriminatoires, le harcèlement verbal ou physique, et les actions abusives. (Sanctions allant jusqu’au bannissement permanent selon la gravité des faits.)</li>
+                <li><strong>Article 31 :</strong> Tout comportement irrespectueux envers les joueuses ou les personnages féminins, en RP ou hors RP, est strictement interdit. Cela inclut les propos sexistes ou discriminatoires, le harcèlement verbal ou physique, et les actions abusives. (Sanctions allant jusqu'au bannissement permanent selon la gravité des faits.)</li>
             </ul>
         </section>
 
-        <!-- Sanctions -->
         <section>
             <h2>Sanctions</h2>
             <ul>
@@ -275,3 +274,11 @@
                 <li><span class="sanctions">Blacklisting :</span> Mise en liste noire empêchant définitivement un membre d'accéder aux événements, giveaways ou toute autre fonctionnalité spéciale du serveur en raison d'un comportement inapproprié répété.</li>
                 <li><span class="sanctions">Signalement à Discord :</span> Dans les cas d'infractions très graves (par exemple, diffusion de contenu illégal), les membres concernés seront signalés directement à l'équipe de modération de Discord, en plus du ban permanent.</li>
             </ul>
+        </section>
+
+        <footer>
+            <p>© 2024 LakView - Tous droits réservés</p>
+        </footer>
+    </div>
+</body>
+</html>
